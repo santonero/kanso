@@ -1,0 +1,5 @@
+pin "controllers/kanso--modal_controller", to: "kanso/controllers/modal_controller.js"
+pin "controllers/kanso--form_controller", to: "kanso/controllers/form_controller.js"
+pin "controllers/kanso--notification_controller", to: "kanso/controllers/notification_controller.js"
+pin "controllers/kanso--dropdown_controller", to: "kanso/controllers/dropdown_controller.js"
+pin "transition", to: "kanso/helpers/transition.js"

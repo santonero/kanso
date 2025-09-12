@@ -1,0 +1,19 @@
+<div data-controller="kanso--dropdown" class="relative inline-block text-left">
+  <div data-action="click->kanso--dropdown#toggle">
+    <%= trigger %>
+  </div>
+
+  <div data-kanso--dropdown-target="panel"
+       class="hidden absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none transition ease-out duration-100"
+       role="menu"
+       aria-orientation="vertical"
+       tabindex="-1"
+       data-action="
+         keydown.esc@window->kanso--dropdown#close
+         click@window->kanso--dropdown#closeOutside
+       ">
+
+    <%= content %>
+
+  </div>
+</div>

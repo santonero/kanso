@@ -1,0 +1,53 @@
+<div data-controller="kanso--modal">
+
+  <div data-action="click->kanso--modal#open">
+    <%= trigger %>
+  </div>
+
+  <div data-kanso--modal-target="container"
+      class="fixed inset-0 z-50 hidden"
+      data-action="keydown.esc@window->kanso--modal#close">
+
+    <div data-kanso--modal-target="backdrop"
+        data-action="mousedown->kanso--modal#backdropMousedown mouseup->kanso--modal#backdropMouseup"
+        class="fixed inset-0 flex w-full items-center justify-center bg-slate-900/70 p-4 transition-opacity duration-300 ease-in-out"
+        data-transition-enter-from="opacity-0"
+        data-transition-enter-to="opacity-100"
+        data-transition-leave-from="opacity-100"
+        data-transition-leave-to="opacity-0">
+
+      <div role="dialog"
+          aria-modal="true"
+          aria-labelledby="<%= header.title_id if header.present? %>"
+          data-kanso--modal-target="panel"
+          class="flex w-full <%= size_classes %> max-h-full transform flex-col rounded-lg bg-white text-left shadow-2xl transition-all duration-300 ease-in-out"
+          data-transition-enter-from="opacity-0 scale-95"
+          data-transition-enter-to="opacity-100 scale-100"
+          data-transition-leave-from="opacity-100 scale-100"
+          data-transition-leave-to="opacity-0 scale-95">
+
+        <% if header.present? %>
+          <div data-test-id="kanso--modal-header" class="flex flex-shrink-0 items-center justify-between rounded-t-lg border-b border-slate-200 p-4">
+            <h2 id="<%= header.title_id %>" class="text-lg font-semibold text-slate-900">
+              <%= header.title %>
+            </h2>
+            <button type="button" data-action="click->kanso--modal#close" class="-m-2 p-2 text-slate-400 hover:cursor-pointer hover:text-slate-600">
+              <span class="sr-only">Close</span>
+              <%= render Kanso::IconComponent.new(name: "x-mark", class: "h-6 w-6") %>
+            </button>
+          </div>
+        <% end %>
+
+        <div data-test-id="kanso--modal-body" class="overflow-y-auto p-4">
+          <%= content %>
+        </div>
+
+        <% if footer.present? %>
+          <div data-test-id="kanso--modal-footer" class="flex flex-shrink-0 flex-row-reverse items-center gap-x-2 rounded-b-lg border-t border-slate-200 bg-slate-50 p-4">
+            <%= footer %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

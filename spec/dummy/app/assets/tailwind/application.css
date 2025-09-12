@@ -1,0 +1,16 @@
+/* Kanso: Config Bridge for portable content detection */
+@config "../../../tailwind.config.js";
+
+@import "tailwindcss";
+
+/* Kanso: Base Styles injected into the native 'base' cascade layer */
+@layer base {
+  input:focus, textarea:focus, select:focus {
+    outline: none;
+  }
+  turbo-frame[busy] {
+    opacity: 0.5;
+    transition: opacity 0.3s ease-in-out;
+  }
+}
+/* End Kanso Base Styles */
