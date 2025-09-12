@@ -1,0 +1,24 @@
+<div data-controller="kanso--form" class="mb-4">
+  <%= form.label attribute, for: field_id, class: "block text-sm font-medium leading-6 text-slate-900" %>
+
+  <div class="relative mt-1">
+    <%= form.send(type, attribute, field_options) %>
+
+    <% if has_errors? %>
+      <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+        <%= render Kanso::IconComponent.new(name: "exclamation-circle", class: "h-5 w-5 text-red-500") %>
+      </div>
+    <% end %>
+  </div>
+
+  <div id="<%= description_id %>" class="mt-2 text-sm min-h-[1.25rem]">
+    <% if has_errors? %>
+      <p data-kanso--form-target="errorMessage"
+         class="text-red-600 opacity-0 transition duration-300 ease-out -translate-y-2">
+        <%= form.object.errors.full_messages_for(attribute).to_sentence %>
+      </p>
+    <% elsif help_text.present? %>
+      <p class="text-slate-500"><%= help_text %></p>
+    <% end %>
+  </div>
+</div>

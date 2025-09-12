@@ -1,0 +1,25 @@
+<div data-controller="kanso--notification"
+     class="flex w-full max-w-sm items-center rounded-lg bg-white p-4 shadow-lg ring-1 ring-black ring-opacity-5 opacity-0 transform translate-x-full transition-all duration-300 ease-out"
+     role="alert">
+  <div class="flex-shrink-0">
+    <div class="flex h-8 w-8 items-center justify-center rounded-full <%= theme_data.icon_bg_classes %>">
+      <%= render Kanso::IconComponent.new(name: theme_data.icon_name, class: "h-5 w-5 #{theme_data.icon_color_classes}") %>
+    </div>
+  </div>
+  <div class="ml-3 w-0 flex-1 pt-0.5">
+    <% if title.present? %>
+      <h3 class="text-sm font-medium <%= theme_data.title_text_classes %>"><%= title %></h3>
+      <p class="mt-1 text-sm <%= theme_data.body_text_classes %>"><%= message %></p>
+    <% else %>
+      <p class="text-sm font-medium <%= theme_data.title_text_classes %>"><%= message %></p>
+    <% end %>
+  </div>
+  <div class="ml-4 flex flex-shrink-0">
+    <button type="button"
+            data-action="click->kanso--notification#close"
+            class="inline-flex rounded-md bg-white text-gray-400 transition-colors hover:text-gray-500 hover:cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+      <span class="sr-only">Close</span>
+      <%= render Kanso::IconComponent.new(name: "x-mark", class: "h-5 w-5") %>
+    </button>
+  </div>
+</div>
