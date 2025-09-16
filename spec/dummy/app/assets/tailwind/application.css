@@ -1,4 +1,4 @@
-/* Kanso: Config Bridge for portable content detection */
+/* Kanso: Tells Tailwind to use our smart JS config */
 @config "../../../tailwind.config.js";
 
 @import "tailwindcss";

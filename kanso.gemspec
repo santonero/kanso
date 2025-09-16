@@ -21,6 +21,7 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "rspec-rails"
   spec.add_development_dependency "capybara"
+  spec.add_development_dependency "ammeter"
   spec.add_development_dependency "sqlite3"
   spec.add_development_dependency "importmap-rails"
   spec.add_development_dependency "tailwindcss-rails"
