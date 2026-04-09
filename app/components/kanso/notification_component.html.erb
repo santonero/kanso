@@ -1,6 +1,6 @@
 <div data-controller="kanso--notification"
      class="flex w-full max-w-sm items-center rounded-lg bg-white p-4 shadow-lg ring-1 ring-black ring-opacity-5 opacity-0 transform translate-x-full transition-all duration-300 ease-out"
-     role="alert">
+     role="<%= theme_data.aria_role %>">
   <div class="flex-shrink-0">
     <div class="flex h-8 w-8 items-center justify-center rounded-full <%= theme_data.icon_bg_classes %>">
       <%= render Kanso::IconComponent.new(name: theme_data.icon_name, class: "h-5 w-5 #{theme_data.icon_color_classes}") %>

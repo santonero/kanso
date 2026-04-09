@@ -27,7 +27,7 @@ RSpec.describe Kanso::NotificationComponent, type: :component do
           icon_wrapper = notification_container.find("div.rounded-full")
           icon_element = icon_wrapper.find("svg")
 
-          expect(notification_container['role']).to eq("alert")
+          expect(notification_container['role']).to eq(theme_data.aria_role)
           expect(icon_element['data-icon-name']).to eq(theme_data.icon_name)
           expect(icon_wrapper['class']).to include(*theme_data.icon_bg_classes.split)
         end
