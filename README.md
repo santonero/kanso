@@ -126,7 +126,7 @@ A notification is most effective when rendered dynamically into a fixed containe
 
     *In a controller:*
     ```ruby
-    redirect_to @post, flash: { success: "Post was successfully updated." }
+    redirect_to @post, flash: { success: "Post was updated successfully." }
     ```
     *In your layout (inside the container):*
     ```erb
@@ -230,22 +230,17 @@ Turbo.StreamActions.redirect = function() {
 }
 ```
 
-*Next, in your controller, set the flash and respond to the `turbo_stream` format:*
+*Next, in your controller, respond to the `turbo_stream` format and set the flash:*
 ```ruby
 # app/controllers/products_controller.rb
 def create
   @product = Product.new(product_params)
   if @product.save
-    # Set the flash message that Turbo Drive will render on the next page.
-    flash[:success] = "Product was successfully created."
-
     respond_to do |format|
-      format.turbo_stream
-      format.html { redirect_to @product, flash: { success: "Product was successfully created." } }
+      format.turbo_stream { flash[:success] = "Product was created successfully." }
     end
   else
-    # On validation failure, Turbo re-renders the frame with errors automatically.
-    render :new, status: :unprocessable_entity
+    render :new, status: :unprocessable_content
   end
 end
 ```
