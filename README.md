@@ -1,3 +1,7 @@
+<p align="center">
+  <img src=".github/assets/kansobanner.jpg" alt="Kanso Minimalist Banner" width="100%">
+</p>
+
 # Kanso (簡素)
 
 A rigorously crafted component library for modern Rails applications, built on a philosophy of radical simplicity.
