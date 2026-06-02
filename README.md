@@ -4,11 +4,7 @@
 
 # Kanso (簡素)
 
-A rigorously crafted component library for modern Rails applications, built on a philosophy of radical simplicity.
-
-Kanso (簡素) is a Japanese design principle valuing clarity and the elimination of the non-essential. This library is the embodiment of that idea, providing a set of foundational, rigorously tested components that are respectful guests in your application.
-
-This README is the single source of truth. The best API is one that needs no explanation.
+Kanso (簡素) is a Japanese design principle valuing clarity and the elimination of the non-essential. This UI component library is the embodiment of that idea: providing foundational, rigorously tested ViewComponents that act as respectful guests in your Rails application.
 
 ## Prerequisites
 
@@ -95,7 +91,7 @@ Renders a performant, inline SVG icon from the Kanso library.
 
 **Available Icons:**
 
-A complete list of all available icons can be found in the source code:➡️ **[View all available icons](https://github.com/santonero/kanso/tree/main/app/assets/images/kanso/icons)**
+A complete list of all available icons can be found in the source code: **[View all available icons](https://github.com/santonero/kanso/tree/main/app/assets/images/kanso/icons)**.
 
 ---
 
