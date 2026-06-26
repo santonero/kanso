@@ -108,7 +108,8 @@ Renders a dismissible notification panel.
 **Options:**
 *   `message:` (`String`, **required**): The notification's content.
 *   `title:` (`String`, optional): An optional title.
-*   `theme:` (`Symbol`): The style. Can be `:success`, `:error`, `:warning`, or `:info`. Defaults to `:info`.
+*   `theme:` (`Symbol`): The style. Can be `:success`, `:error`, `:warning`, or `:info`. Defaults to `:info`.<br>
+*(Note: For seamless Rails integration, standard flash keys :notice and :alert are automatically mapped to :success and :error respectively).*
 
 **Implementation Patterns:**
 

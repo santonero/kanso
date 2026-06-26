@@ -47,12 +47,20 @@ module Kanso
       )
     }.freeze
 
+    RAILS_FLASH_ALIASES = {
+      notice: :success,
+      alert: :error
+    }.freeze
+
     attr_reader :title, :message, :theme_data
 
     def initialize(message:, title: nil, theme: :info)
       @title = title
       @message = message
-      @theme_data = THEMES[theme.to_sym] || THEMES[:info]
+
+      theme_sym = theme.to_sym
+      mapped_theme = RAILS_FLASH_ALIASES[theme_sym] || theme_sym
+      @theme_data = THEMES[mapped_theme] || THEMES[:info]
     end
   end
 end
